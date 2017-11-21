@@ -4,7 +4,7 @@ public class CalculateHelper {
     MathCommand command;
     double leftVal;
     double rightVal;
-    double result;
+    public  double result;
 
     public void process(String statement) throws InvalidStatementException{
         //
