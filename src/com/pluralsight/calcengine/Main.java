@@ -30,5 +30,6 @@ public class Main {
         equation.rigthVal=rightVal;
         equation.opCode=opCode;
         return  equation;
+
     }
 }
