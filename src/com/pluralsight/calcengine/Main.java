@@ -44,6 +44,22 @@ public class Main {
         System.out.print("result=");
         System.out.println(equationOverload.getResult());
 
+        System.out.println();
+        System.out.println("Using Inheritance");
+        System.out.println();
+
+        CalculateBase[] calculators ={
+                new Divider(100,50),
+                new Adder(25,92),
+                new Subtracter(225,17),
+                new Multiplier(11,3)
+        };
+        for (CalculateBase calculator:
+             calculators) {
+            calculator.calculate();
+            System.out.print("result = ");
+            System.out.println(calculator.getResult());
+        }
     }
 //    public static  MathEquation create(double leftVal,double rightVal,char opCode){
 //        MathEquation equation = new MathEquation();
