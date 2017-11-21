@@ -19,16 +19,16 @@ public class Main {
              equations) {
             equation.execute();
             System.out.print("result = ");
-            System.out.println(equation.result);
+            System.out.println(equation.getResult());
         }
 
 
     }
     public static  MathEquation create(double leftVal,double rightVal,char opCode){
         MathEquation equation = new MathEquation();
-        equation.leftVals=leftVal;
-        equation.rigthVal=rightVal;
-        equation.opCode=opCode;
+        equation.setLeftVals(leftVal);
+        equation.setRigthVal(rightVal);
+        equation.setOpCode(opCode);
         return  equation;
 
     }

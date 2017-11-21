@@ -1,10 +1,40 @@
 package com.pluralsight.calcengine;
 
 public class MathEquation {
-    public double leftVals;
-    public double rigthVal;
-    public char opCode;
-    public double result;
+    private double leftVals;
+    private double rigthVal;
+    private char opCode;
+    private double result;
+
+    public double getRigthVal() {
+        return rigthVal;
+    }
+
+    public void setRigthVal(double rigthVal) {
+        this.rigthVal = rigthVal;
+    }
+
+    public double getLeftVals() {
+        return leftVals;
+    }
+
+    public void setLeftVals(double leftVals) {
+        this.leftVals = leftVals;
+    }
+
+    public char getOpCode() {
+        return opCode;
+    }
+
+    public void setOpCode(char opCode) {
+        this.opCode = opCode;
+    }
+
+
+
+    public double getResult(){
+        return  result;
+    }
 
     public void execute(){
         switch (opCode) {
