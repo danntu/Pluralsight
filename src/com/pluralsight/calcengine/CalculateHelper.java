@@ -6,15 +6,23 @@ public class CalculateHelper {
     double rightVal;
     double result;
 
-    public void process(String statement){
+    public void process(String statement) throws InvalidStatementException{
         //
         String[] parts = statement.split(" ");
+        if (parts.length!=3)
+            throw new InvalidStatementException("Incorrect number fields",statement);
         String commandstring=parts[0];
+        try{
+            leftVal=Double.parseDouble(parts[1]);
+            rightVal=Double.parseDouble(parts[2]);
+        } catch (NumberFormatException e){
+            throw  new InvalidStatementException("Non-numeric data",statement,e);
+        }
 
-        leftVal=Double.parseDouble(parts[1]);
-        rightVal=Double.parseDouble(parts[2]);
 
         setCommandFromString(commandstring);
+        if (command==null)
+            throw new InvalidStatementException("Invalid command",statement);
 
         CalculateBase calculator = null;
         switch (command){

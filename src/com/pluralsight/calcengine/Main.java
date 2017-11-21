@@ -3,6 +3,9 @@ package com.pluralsight.calcengine;
 public class Main {
     public static void main(String[] args) {
         String[] statements = {
+                "add 1.0",
+                "add xx 25.0",
+                "addX 0.0 0.0",
                 "divide 100 50",
                 "add 25 92",
                 "substract 225 17",
@@ -11,8 +14,15 @@ public class Main {
         CalculateHelper helper = new CalculateHelper();
         for (String statement:
              statements) {
-            helper.process(statement);
-            System.out.println(helper.result);
+            try{
+                helper.process(statement);
+                System.out.println(helper.result);
+            } catch (InvalidStatementException e){
+                System.out.println(e.getMessage());
+                if (e.getCause() !=null)
+                    System.out.println("Original Exception "+e.getCause().getMessage());
+            }
+
         }
 //        MathEquation testEquation = new MathEquation();
 //        testEquation.execute();
