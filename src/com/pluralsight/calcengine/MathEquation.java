@@ -1,7 +1,7 @@
 package com.pluralsight.calcengine;
 
 public class MathEquation {
-    private double leftVals;
+    private double leftVal;
     private double rigthVal;
     private char opCode='a';
     private double result;
@@ -14,12 +14,12 @@ public class MathEquation {
         this.rigthVal = rigthVal;
     }
 
-    public double getLeftVals() {
-        return leftVals;
+    public double getleftVal() {
+        return leftVal;
     }
 
-    public void setLeftVals(double leftVals) {
-        this.leftVals = leftVals;
+    public void setleftVal(double leftVal) {
+        this.leftVal = leftVal;
     }
 
     public char getOpCode() {
@@ -40,9 +40,9 @@ public class MathEquation {
         this.opCode = opCode;
     }
 
-    public MathEquation(double leftVals, double rigthVal, char opCode) {
+    public MathEquation(double leftVal, double rigthVal, char opCode) {
         this(opCode);
-        this.leftVals = leftVals;
+        this.leftVal = leftVal;
         this.rigthVal = rigthVal;
 
     }
@@ -50,23 +50,36 @@ public class MathEquation {
     public MathEquation() {
     }
 
+    public  void execute(double leftVal, double rigthVal){
+        this.leftVal=leftVal;
+        this.rigthVal=rigthVal;
+        execute();
+    }
+    public  void execute(int leftVal, int rigthVal){
+        this.leftVal=leftVal;
+        this.rigthVal=rigthVal;
+        execute();
+
+        result = (int)result;
+    }
+
     public void execute(){
         switch (opCode) {
             case 'a':
-                result = leftVals + rigthVal;
+                result = leftVal + rigthVal;
                 break;
             case 's':
-                result = leftVals - rigthVal;
+                result = leftVal - rigthVal;
                 break;
             case 'd':
-                result = rigthVal != 0.0d ? leftVals / rigthVal : 0.0d;
+                result = rigthVal != 0.0d ? leftVal / rigthVal : 0.0d;
 //            if (val2 !=0)
 //              result=val1/val2;
 //            else
 //              result=0.0d;
                 break;
             case 'm':
-                result = leftVals * rigthVal;
+                result = leftVal * rigthVal;
                 break;
             default:
                 System.out.println("Error - invalid opCode");
