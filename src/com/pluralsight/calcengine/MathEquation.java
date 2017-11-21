@@ -1,90 +1,70 @@
 package com.pluralsight.calcengine;
 
+/**
+ * Created by Jim on 9/12/2015.
+ */
 public class MathEquation {
     private double leftVal;
-    private double rigthVal;
-    private char opCode='a';
+    private double rightVal;
+    private char opCode = 'a';
     private double result;
 
-    public double getRigthVal() {
-        return rigthVal;
-    }
+    public double getLeftVal() {return leftVal;}
+    public void setLeftVal(double leftVal) {this.leftVal = leftVal;}
+    public double getRightVal() {return rightVal;}
+    public void setRightVal(double rightVal) {this.rightVal = rightVal;}
+    public char getOpCode() {return opCode;}
+    public void setOpCode(char opCode) {this.opCode = opCode;}
 
-    public void setRigthVal(double rigthVal) {
-        this.rigthVal = rigthVal;
-    }
+    public double getResult() { return result;}
 
-    public double getleftVal() {
-        return leftVal;
-    }
-
-    public void setleftVal(double leftVal) {
-        this.leftVal = leftVal;
-    }
-
-    public char getOpCode() {
-        return opCode;
-    }
-
-    public void setOpCode(char opCode) {
-        this.opCode = opCode;
-    }
-
-
-
-    public double getResult(){
-        return  result;
-    }
+    public MathEquation() {}
 
     public MathEquation(char opCode) {
         this.opCode = opCode;
     }
 
-    public MathEquation(double leftVal, double rigthVal, char opCode) {
+    public MathEquation(char opCode, double leftVal, double rightVal) {
         this(opCode);
         this.leftVal = leftVal;
-        this.rigthVal = rigthVal;
-
+        this.rightVal = rightVal;
     }
 
-    public MathEquation() {
-    }
+    public void execute(double leftVal, double rightVal) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
 
-    public  void execute(double leftVal, double rigthVal){
-        this.leftVal=leftVal;
-        this.rigthVal=rigthVal;
         execute();
     }
-    public  void execute(int leftVal, int rigthVal){
-        this.leftVal=leftVal;
-        this.rigthVal=rigthVal;
+
+    public void execute(int leftVal, int rightVal) {
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+
         execute();
 
         result = (int)result;
     }
 
-    public void execute(){
-        switch (opCode) {
+    public void execute() {
+        switch(opCode) {
             case 'a':
-                result = leftVal + rigthVal;
+                result = leftVal + rightVal;
                 break;
             case 's':
-                result = leftVal - rigthVal;
+                result = leftVal - rightVal;
                 break;
             case 'd':
-                result = rigthVal != 0.0d ? leftVal / rigthVal : 0.0d;
-//            if (val2 !=0)
-//              result=val1/val2;
-//            else
-//              result=0.0d;
+                result = rightVal != 0.0d ? leftVal / rightVal : 0.0d;
                 break;
             case 'm':
-                result = leftVal * rigthVal;
+                result = leftVal * rightVal;
                 break;
             default:
                 System.out.println("Error - invalid opCode");
                 result = 0.0d;
                 break;
         }
+
     }
 }

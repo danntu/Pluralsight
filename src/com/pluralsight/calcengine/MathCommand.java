@@ -1,5 +1,11 @@
 package com.pluralsight.calcengine;
 
-public enum MathCommand {
-    Add,Substract, Multiply,Divide
+/**
+ * Created by Jim on 10/18/2015.
+ */
+enum MathCommand {
+    Add,
+    Subtract,
+    Multiply,
+    Divide
 }
