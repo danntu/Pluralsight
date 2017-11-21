@@ -2,17 +2,16 @@ package com.pluralsight.calcengine;
 
 public class Main {
     public static void main(String[] args) {
-//        double[] leftVals = {100.0d, 25.0d,225.0d,11.0d};
-//
-//        double[] rigthVal={50.0d,92.0d,17.0d,3.0d};
-//
-//        char[] opCodes={'d','a','s','m'};
-//        double[] result =new double[opCodes.length];
+//        MathEquation testEquation = new MathEquation();
+//        testEquation.execute();
+//        System.out.print("test = ");
+//        System.out.println(testEquation.getResult());
+
         MathEquation[] equations =new MathEquation[4];
-        equations[0]= create(100.0d,50.0d,'d');
-        equations[1]= create(25.0d,92.0d,'a');
-        equations[2]= create(225.0d,17.0d,'s');
-        equations[3]= create(11.0d,3.0d,'m');
+        equations[0]= new MathEquation(100.0d,50.0d,'d');
+        equations[1]= new MathEquation(25.0d,92.0d,'a');
+        equations[2]= new MathEquation(225.0d,17.0d,'s');
+        equations[3]= new MathEquation(11.0d,3.0d,'m');
 
 
         for (MathEquation equation:
@@ -24,12 +23,12 @@ public class Main {
 
 
     }
-    public static  MathEquation create(double leftVal,double rightVal,char opCode){
-        MathEquation equation = new MathEquation();
-        equation.setLeftVals(leftVal);
-        equation.setRigthVal(rightVal);
-        equation.setOpCode(opCode);
-        return  equation;
-
-    }
+//    public static  MathEquation create(double leftVal,double rightVal,char opCode){
+//        MathEquation equation = new MathEquation();
+//        equation.setLeftVals(leftVal);
+//        equation.setRigthVal(rightVal);
+//        equation.setOpCode(opCode);
+//        return  equation;
+//
+//    }
 }
