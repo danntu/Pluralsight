@@ -9,9 +9,9 @@ import static javacore.Helper.*;
 public class Main {
     public static void main(String[] args) {
         //doTryCatchFinally();
-        //doCloseThing();
+        doCloseThing();
         //doTryWithResources();
-        doTryWithResourcesMulti();
+        //doTryWithResourcesMulti();
     }
 
     public static void doTryCatchFinally(){
@@ -74,6 +74,8 @@ public class Main {
             ac.saySomething();
         } catch (IOException e){
             System.out.println(e.getClass().getSimpleName()+" - "+e.getMessage());
+            for (Throwable t : e.getSuppressed())
+                System.out.println("Suppressed: "+t.getMessage());
         }
     }
 }
