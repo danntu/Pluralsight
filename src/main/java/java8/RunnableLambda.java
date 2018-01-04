@@ -15,7 +15,9 @@ public class RunnableLambda {
             }
         };
 
-        Runnable runnableLambda= ()->{
+
+
+        Runnable runnableLambda = ()->{
             for (int i = 0; i < 3; i++) {
                 System.out.println(
                         "Hello world from thread [" +
