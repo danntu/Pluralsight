@@ -34,6 +34,7 @@ public class ShipmentTest {
     }
     @Test
     public void shouldIdentifyVanRequirement() throws Exception{
+
         shipment.add(door);
         shipment.add(floorPanel);
         shipment.add(window);
